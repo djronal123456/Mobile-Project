@@ -40,6 +40,9 @@ public class MainActivity extends AppCompatActivity {
         View view = getLayoutInflater().inflate(R.layout.add_restaurant, null);
 
         final EditText name = view.findViewById(R.id.nameIn);
+        final EditText address = view.findViewById(R.id.adressIn);
+        final EditText phone = view.findViewById(R.id.phoneIn);
+        final EditText description = view.findViewById(R.id.descriptionIn);
 
         builder.setView(view);
         builder.setTitle("Enter name")

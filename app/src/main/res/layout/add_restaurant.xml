@@ -56,17 +56,17 @@
         android:layout_marginTop="30dp"
         android:ems="10"
         android:hint="@string/description"
-        android:inputType="phone"
+        android:inputType="text"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
+        android:id="@+id/tags"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:layout_alignParentBottom="true"
-        android:layout_below="@id/descriptionIn"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_below="@id/descriptionIn">
 
         <CheckBox
             android:id="@+id/tagVegetarian"
@@ -100,6 +100,14 @@
             app:layout_constraintHorizontal_bias="0.825"
             app:layout_constraintStart_toStartOf="parent"
             tools:layout_editor_absoluteY="552dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@id/tags"
+        android:orientation="horizontal">
 
         <CheckBox
             android:id="@+id/tagEuropean"
@@ -133,6 +141,7 @@
             app:layout_constraintHorizontal_bias="0.825"
             app:layout_constraintStart_toStartOf="parent"
             tools:layout_editor_absoluteY="595dp" />
+
     </LinearLayout>
 
 </RelativeLayout>
