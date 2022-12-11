@@ -23,13 +23,14 @@ public class MainActivity extends AppCompatActivity {
         address = findViewById(R.id.adressIn);
         phone = findViewById(R.id.phoneIn);
 
-        btn.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View view){
-        String item = (String) name.getText() + (String) address.getText() + (String) phone.getText();
-        resList.add(item);
-        }
-        });
+
     }
 
+    public void addRestaurant(View view){
+        String item = name.getText().toString() + address.getText().toString() + phone.getText().toString();
+        TextView success = findViewById(R.id.success);
+        resList.add(item);
+        Integer man = resList.size();
+        success.setText(man.toString());
+    };
 }
