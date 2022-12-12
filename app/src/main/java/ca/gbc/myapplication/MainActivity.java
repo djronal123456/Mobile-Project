@@ -19,6 +19,9 @@ public class MainActivity extends AppCompatActivity {
     AlertDialog dialog;
     LinearLayout layout;
     public static String name;
+    public static String address;
+    public static String phone;
+    public static String rating;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +44,9 @@ public class MainActivity extends AppCompatActivity {
         View view = getLayoutInflater().inflate(R.layout.add_restaurant, null);
 
         final EditText name = view.findViewById(R.id.nameIn);
+        final EditText address = view.findViewById(R.id.adressIn);
+        final EditText phone = view.findViewById(R.id.phoneIn);
+        final EditText rating = view.findViewById(R.id.rating);
 
         builder.setView(view);
         builder.setTitle("Enter name")
@@ -65,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
 
         TextView nameView = view.findViewById(R.id.name);
         Button delete = view.findViewById(R.id.delete);
-        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) Button edit = view.findViewById(R.id.edit);
+        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) Button viewDetails = view.findViewById(R.id.view);
 
         nameView.setText(name);
 
@@ -75,10 +81,13 @@ public class MainActivity extends AppCompatActivity {
                 layout.removeView(view);
             }
         });
-        edit.setOnClickListener(new View.OnClickListener() {
+        viewDetails.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 setName(name);
+                setAddress(address);
+                setPhone(phone);
+                setRating(rating);
                 changePage();
             }
         });
@@ -89,12 +98,16 @@ public class MainActivity extends AppCompatActivity {
         Intent i = new Intent(this, AddRestaurant.class);
         startActivity(i);
     }
-    public static String getName(){
-        return name;
-    }
-    public void setName(String someName){
-        this.name = someName;
-    }
+    public static String getName(){return name;}
+    public void setName(String someName){this.name = someName;}
 
+    public static String getAddress(){return address;}
+    public void setAddress(String someAddress){this.address = someAddress;}
+
+    public static String getPhone(){return phone;}
+    public void setPhone(String somePhone){this.phone = somePhone;}
+
+    public static String getRating(){return rating;}
+    public void setRating(String someRating){this.rating=someRating;}
 }
 

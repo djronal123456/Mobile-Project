@@ -30,11 +30,11 @@
                     android:textFontWeight="1000"
                     android:textSize="30dp"/>
                 <Button
-                    android:id="@+id/edit"
+                    android:id="@+id/view"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="false"
-                    android:text="Edit"
+                    android:text="View"
                     android:layout_marginRight="100dp"
                     android:layout_alignParentRight="true" />
                 <Button
