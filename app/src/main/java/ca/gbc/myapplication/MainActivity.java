@@ -46,14 +46,14 @@ public class MainActivity extends AppCompatActivity {
         final EditText name = view.findViewById(R.id.nameIn);
         final EditText address = view.findViewById(R.id.adressIn);
         final EditText phone = view.findViewById(R.id.phoneIn);
-        //final EditText rating = view.findViewById(R.id.rating);
+        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) final EditText rating = view.findViewById(R.id.rating);
 
         builder.setView(view);
         builder.setTitle("Enter name")
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        addCard(name.getText().toString(),address.getText().toString(),phone.getText().toString());
+                        addCard(name.getText().toString(),address.getText().toString(),phone.getText().toString(),rating.getText().toString());
 
                     }
                 })
@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
         dialog = builder.create();
     }
 
-    private void addCard(String name, String address,String phone) {
+    private void addCard(String name, String address, String phone, String rating) {
         final View view = getLayoutInflater().inflate(R.layout.card, null);
 
         TextView nameView = view.findViewById(R.id.name);
