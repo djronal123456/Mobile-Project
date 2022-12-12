@@ -46,4 +46,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <EditText
+        android:id="@+id/rating"
+        android:layout_width="281dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="280dp"
+        android:ems="10"
+        android:hint="@string/rating"
+        android:inputType="number"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </RelativeLayout>
