@@ -10,4 +10,5 @@
     <string name='tag_european'>European</string>
     <string name='tag_asian'>Asian</string>
     <string name='tag_other'>Other</string>
+    <string name="rating">Enter Rating 1-5</string>
 </resources>
