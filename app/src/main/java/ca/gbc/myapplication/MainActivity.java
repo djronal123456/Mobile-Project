@@ -45,13 +45,6 @@ public class MainActivity extends AppCompatActivity {
                 dialog.show();
             }
         });
-        TextView man = findViewById(R.id.tryman);
-        if(AddRestaurant.getTry()){
-            addCard(AddRestaurant.getName(),AddRestaurant.getAddress(),AddRestaurant.getPhone(), AddRestaurant.getDescription(), AddRestaurant.getRating(), AddRestaurant.getVegetarian(), AddRestaurant.getVegan(), AddRestaurant.getOrganic(), AddRestaurant.getEuropean(), AddRestaurant.getAsian(), AddRestaurant.getOther());
-            AddRestaurant.setTry(Boolean.FALSE);
-        }
-        man.setText(AddRestaurant.getTry().toString());
-
     }
 
 
