@@ -2,4 +2,12 @@
     <string name="app_name">My Application</string>
     <string name='address'>Enter Address</string>
     <string name='phoneNumber'>Enter Phone Number</string>
+    <string name="nameInputBox">Name</string>
+    <string name='description'>Enter Description</string>
+    <string name='tag_vegetarian'>Vegetarian</string>
+    <string name='tag_vegan'>Vegan</string>
+    <string name='tag_organic'>Organic</string>
+    <string name='tag_european'>European</string>
+    <string name='tag_asian'>Asian</string>
+    <string name='tag_other'>Other</string>
 </resources>
