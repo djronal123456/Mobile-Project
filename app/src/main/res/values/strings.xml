@@ -10,4 +10,16 @@
     <string name='tag_european'>European</string>
     <string name='tag_asian'>Asian</string>
     <string name='tag_other'>Other</string>
+    <string name='display_name'>Name:</string>
+    <string name='display_address'>Address:</string>
+    <string name='display_phone'>Phone:</string>
+    <string name='display_rating'>Rating:</string>
+    <string name='display_description'>Description:</string>
+    <string name='display_tags'>Tags</string>
+    <string name='go_to'>Go To Restaurant</string>
+    <string name='share'>Share</string>
+    <string name='add_button'>Add</string>
+    <string name='view_button'>View</string>
+    <string name='delete_button'>Delete</string>
+    <string name='edit_button'>Edit</string>
 </resources>

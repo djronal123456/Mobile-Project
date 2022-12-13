@@ -29,21 +29,23 @@
                     android:textColor="@android:color/holo_purple"
                     android:textFontWeight="1000"
                     android:textSize="30dp"/>
+
                 <Button
                     android:id="@+id/view"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="false"
-                    android:text="View"
+                    android:layout_alignParentRight="true"
                     android:layout_marginRight="100dp"
-                    android:layout_alignParentRight="true" />
+                    android:text="@string/view_button" />
+
                 <Button
                     android:id="@+id/delete"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
-                    android:text="Delete"
-                    android:layout_alignParentRight="true" />
+                    android:layout_alignParentRight="true"
+                    android:text="@string/delete_button" />
 
             </RelativeLayout>
 
