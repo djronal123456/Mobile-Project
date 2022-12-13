@@ -24,12 +24,16 @@ public class AddRestaurant extends AppCompatActivity {
         TextView displayingAddress = findViewById(R.id.textView2);
         TextView displayingPhone = findViewById(R.id.textView3);
         TextView displayingRating = findViewById(R.id.textView4);
+        TextView displayingDescription = findViewById(R.id.textView10);
+        TextView displayingTags = findViewById(R.id.textView12);
         btn  = findViewById(R.id.goTo);
 
         displayingName.setText(MainActivity.getName());
         displayingAddress.setText(MainActivity.getAddress());
         displayingPhone.setText(MainActivity.getPhone());
         displayingRating.setText(MainActivity.getRating());
+        displayingDescription.setText(MainActivity.getDescription());
+        displayingTags.setText(getTags());
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,6 +44,29 @@ public class AddRestaurant extends AppCompatActivity {
             }
         });
 
+    }
+
+    public static String getTags() {
+        String tags = "";
+        if (MainActivity.getVegetarian()) {
+            tags += "Vegetarian, ";
+        }
+        if (MainActivity.getVegan()) {
+            tags += "Vegan,";
+        }
+        if (MainActivity.getOrganic()) {
+            tags += "Organic, ";
+        }
+        if (MainActivity.getEuropean()) {
+            tags += "European, ";
+        }
+        if (MainActivity.getAsian()) {
+            tags += "Asian, ";
+        }
+        if (MainActivity.getOther()) {
+            tags += "Other";
+        }
+        return tags;
     }
 
 
