@@ -2,6 +2,7 @@ package ca.gbc.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -32,11 +33,12 @@ public class AddRestaurant extends AppCompatActivity {
         EditText displayingName = findViewById(R.id.textView);
         EditText displayingAddress = findViewById(R.id.textView2);
         EditText displayingPhone = findViewById(R.id.textView3);
-        EditText displayingRating = findViewById(R.id.textView4);
-        EditText displayingDescription = findViewById(R.id.textView10);
+        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) EditText displayingRating = findViewById(R.id.textView10);
+        EditText displayingDescription = findViewById(R.id.textView4);
         TextView displayingTags = findViewById(R.id.textView12);
         Button locationBtn  = findViewById(R.id.goTo);
         Button saveBtn  = findViewById(R.id.save);
+        Button btn = findViewById(R.id.share);
 
         displayingName.setText(MainActivity.getName());
         displayingAddress.setText(MainActivity.getAddress());
@@ -65,7 +67,16 @@ public class AddRestaurant extends AppCompatActivity {
               startActivity(intent);
             }
         });
-
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent email = new Intent(Intent.ACTION_SEND);
+                email.putExtra(Intent.EXTRA_SUBJECT, ("Details of " + Uri.encode(MainActivity.getName())));
+                email.putExtra(Intent.EXTRA_TEXT, ("Address: " + Uri.encode(MainActivity.getAddress()) + "\nPhone Number: " + Uri.encode(MainActivity.getPhone()) + "\nDescription: " + Uri.encode(MainActivity.getDescription()) + "\n This was sent using the Restaurant Guide App"));
+                email.setType("message/rfc822");
+                startActivity(Intent.createChooser(email, "Choose an Email client :"));
+            }
+        });
         saveBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -150,5 +161,3 @@ public class AddRestaurant extends AppCompatActivity {
     public static Boolean getOther(){return other;}
     public void setOther(Boolean someOther){this.other=someOther;}
 }
-
-
