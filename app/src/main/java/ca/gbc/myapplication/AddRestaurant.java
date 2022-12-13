@@ -27,6 +27,7 @@ public class AddRestaurant extends AppCompatActivity {
         TextView displayingDescription = findViewById(R.id.textView10);
         TextView displayingTags = findViewById(R.id.textView12);
         btn  = findViewById(R.id.goTo);
+        btn = findViewById(R.id.share);
 
         displayingName.setText(MainActivity.getName());
         displayingAddress.setText(MainActivity.getAddress());
@@ -41,6 +42,17 @@ public class AddRestaurant extends AppCompatActivity {
                 Intent intent = new Intent(Intent.ACTION_VIEW);
                 intent.setData(Uri.parse("geo:0,0?q=" +Uri.encode(MainActivity.getAddress())));
                 startActivity(intent);
+            }
+        });
+
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent email = new Intent(Intent.ACTION_SEND);
+                email.putExtra(Intent.EXTRA_SUBJECT, ("Details of " + Uri.encode(MainActivity.getName())));
+                email.putExtra(Intent.EXTRA_TEXT, ("Address: " + Uri.encode(MainActivity.getAddress()) + "\nPhone Number: " + Uri.encode(MainActivity.getPhone()) + "\nDescription: " + Uri.encode(MainActivity.getDescription()) + "\n This was sent using the Restaurant Guide App"));
+                email.setType("message/rfc822");
+                startActivity(Intent.createChooser(email, "Choose an Email client :"));
             }
         });
 
